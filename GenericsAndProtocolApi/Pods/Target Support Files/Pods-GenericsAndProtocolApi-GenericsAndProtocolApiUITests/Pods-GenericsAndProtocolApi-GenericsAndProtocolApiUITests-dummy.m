@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_GenericsAndProtocolApi_GenericsAndProtocolApiUITests : NSObject
+@end
+@implementation PodsDummy_Pods_GenericsAndProtocolApi_GenericsAndProtocolApiUITests
+@end

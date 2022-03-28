@@ -1,0 +1,6 @@
+framework module Pods_GenericsAndProtocolApiTests {
+  umbrella header "Pods-GenericsAndProtocolApiTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

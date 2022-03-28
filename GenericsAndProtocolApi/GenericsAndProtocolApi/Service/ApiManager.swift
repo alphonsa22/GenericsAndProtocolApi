@@ -6,20 +6,24 @@
 //
 
 import Foundation
+import Alamofire
 
+typealias EndPoint = AppUrl.Endpoint
+typealias Method = AppUrl.Method
+typealias APIError = AppUrl.APIError
+typealias baseUrl = AppUrl.BaseUrl
 
 class ApiManager: NSObject {
     
-    let baseurl = AppUrl.BaseUrl.dev.rawValue
-    typealias EndPoint = AppUrl.Endpoint
-    typealias Method = AppUrl.Method
-    typealias APIError = AppUrl.APIError
+    let baseurl = baseUrl.dev.rawValue
+ 
     
     func request(endPoint: EndPoint, method: Method)-> URLRequest {
         let path = "\(baseurl)\(endPoint.rawValue)"
         guard let url = URL(string: path) else {
             preconditionFailure("Bad URL")
         }
+        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.allHTTPHeaderFields = ["Content-Type": "application/json"]
@@ -51,4 +55,5 @@ class ApiManager: NSObject {
         }
         dataTask.resume()
     }
+
 }
